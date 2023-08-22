@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Model.Employee;
@@ -32,8 +33,12 @@ public class ApiController {
 		return aser.showinfo();
 	}
 	@GetMapping("/{id}")
-	public Optional<Employee> oneEmployee(@PathVariable(name="id") int id) {
+	public Optional<Employee> oneEmployee(@PathVariable int id) {
 		return aser.getEmployeeById(id);
+	}
+	@GetMapping("getid")
+	public Optional<Employee> oneEmp(@RequestParam int id) {
+		return aser.getEmpid(id);
 	}
 	
 

@@ -23,8 +23,12 @@ public class ApiService {
 		return er.findAll();
 	}
 
-	public Optional<Employee> getEmployeeById(@PathVariable(name="id")int id) {
+	public Optional<Employee> getEmployeeById(int id) {
 		return er.findById(id);
 	}
+	public Optional<Employee> getEmpid(int id) {
+		return er.findById(id);
+	}
+	
 
 }
